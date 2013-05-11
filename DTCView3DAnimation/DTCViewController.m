@@ -85,15 +85,14 @@ const CGFloat kAnimDuration = 0.2f;
 // Block declaration
 void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^(CGPoint position, UIView *view, CGFloat maxAngle)
 {
-    CGPoint center = view.center;
-    CGFloat dx = position.x - center.x;
-    CGFloat dy = position.y - center.y;
-    // Get values for x and y between 1 and -1
+    CGFloat dx = position.x - view.center.x;
+    CGFloat dy = position.y - view.center.y;
+    // Get values for x and y axis
     CGFloat yTransformation = dx / view.window.frame.size.width;
     CGFloat xTransformation = -dy / view.window.frame.size.height;
-    // Calculate the angle
-    CGFloat maxX = view.window.frame.size.width - center.x;
-    CGFloat maxY = view.window.frame.size.height - center.y;
+    // Calculate the angle depending on the distance from the center
+    CGFloat maxX = view.window.frame.size.width - view.center.x;
+    CGFloat maxY = view.window.frame.size.height - view.center.y;
     CGFloat angle = (sqrt(dx*dx + dy*dy) / sqrt(maxX*maxX + maxY*maxY)) * maxAngle;
     
     // Begin the transformation anim

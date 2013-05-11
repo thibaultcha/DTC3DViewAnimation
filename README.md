@@ -1,6 +1,6 @@
 ## DTC3DViewAnimation
 
-This animation "push" a view according to a point (x and y) and relative to it's center.
+This animation "push" a view according to a point (x and y) and relative to it's center. The angle depends on the distance from the center of the screen and can be set to a given max.
 
 [Video demo](http://cl.ly/3y0o2z1v2U00)
 
@@ -9,20 +9,19 @@ This animation "push" a view according to a point (x and y) and relative to it's
 Much more reactivity in real than in the video.
 
 ## How
-It's this block doing the trick:
+It's this block which does the trick:
 
 ```objective-c
 void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^(CGPoint position, UIView *view, CGFloat maxAngle)
 {
-    CGPoint center = view.center;
-    CGFloat dx = position.x - center.x;
-    CGFloat dy = position.y - center.y;
-    // Get values for x and y between 1 and -1
+    CGFloat dx = position.x - view.center.x;
+    CGFloat dy = position.y - view.center.y;
+    // Get values for x and y axis
     CGFloat yTransformation = dx / view.window.frame.size.width;
     CGFloat xTransformation = -dy / view.window.frame.size.height;
-    // Calculate the angle
-    CGFloat maxX = view.window.frame.size.width - center.x;
-    CGFloat maxY = view.window.frame.size.height - center.y;
+    // Calculate the angle depending on the distance from the center
+    CGFloat maxX = view.window.frame.size.width - view.center.x;
+    CGFloat maxY = view.window.frame.size.height - view.center.y;
     CGFloat angle = (sqrt(dx*dx + dy*dy) / sqrt(maxX*maxX + maxY*maxY)) * maxAngle;
     
     // Begin the transformation anim
