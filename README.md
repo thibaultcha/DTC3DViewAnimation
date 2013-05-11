@@ -6,6 +6,8 @@ This animation "push" a view according to a point (x and y) and relative to it's
 
 ![](screenshot1.png)
 
+Much more reactivity in real than in the video.
+
 ## How
 It's this block doing the trick:
 
