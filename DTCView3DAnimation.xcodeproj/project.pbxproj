@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21392349173EA33100AB90A0 /* DTCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21392348173EA33100AB90A0 /* DTCViewController.xib */; };
+		2139234B173EAD2E00AB90A0 /* ironman.png in Resources */ = {isa = PBXBuildFile; fileRef = 2139234A173EAD2E00AB90A0 /* ironman.png */; };
 		21563073173D3D5F0008EA45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21563072173D3D5F0008EA45 /* UIKit.framework */; };
 		21563075173D3D5F0008EA45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21563074173D3D5F0008EA45 /* Foundation.framework */; };
 		21563077173D3D5F0008EA45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21563076173D3D5F0008EA45 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		21392348173EA33100AB90A0 /* DTCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTCViewController.xib; path = DTCView3DAnimation/DTCViewController.xib; sourceTree = "<group>"; };
+		2139234A173EAD2E00AB90A0 /* ironman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ironman.png; path = ../../../../Downloads/ironman.png; sourceTree = "<group>"; };
 		2156306F173D3D5F0008EA45 /* DTCView3DAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DTCView3DAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21563072173D3D5F0008EA45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21563074173D3D5F0008EA45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +100,7 @@
 		21563079173D3D5F0008EA45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2139234A173EAD2E00AB90A0 /* ironman.png */,
 				2156307A173D3D5F0008EA45 /* DTCView3DAnimation-Info.plist */,
 				2156307B173D3D5F0008EA45 /* InfoPlist.strings */,
 				2156307E173D3D5F0008EA45 /* main.m */,
@@ -177,6 +180,7 @@
 				21563087173D3D5F0008EA45 /* Default@2x.png in Resources */,
 				21563089173D3D5F0008EA45 /* Default-568h@2x.png in Resources */,
 				21392349173EA33100AB90A0 /* DTCViewController.xib in Resources */,
+				2139234B173EAD2E00AB90A0 /* ironman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

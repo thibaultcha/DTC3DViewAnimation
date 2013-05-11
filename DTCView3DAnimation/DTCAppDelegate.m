@@ -13,8 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    DTCViewController *viewController = [[DTCViewController alloc] initWithNibName:nil
+
+    DTCViewController *viewController = [[DTCViewController alloc] initWithNibName:@"DTCViewController"
                                                                             bundle:nil];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

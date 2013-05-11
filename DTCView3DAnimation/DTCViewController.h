@@ -11,7 +11,10 @@
 @interface DTCViewController : UIViewController
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
+@property (weak, nonatomic) IBOutlet UISlider *maxAngle;
+@property (weak, nonatomic) IBOutlet UILabel *angleLabel;
 
+- (IBAction)onAngleValueChanged:(id)sender;
 - (void)onPanGesture:(UIPanGestureRecognizer *)gesture;
 
 @end

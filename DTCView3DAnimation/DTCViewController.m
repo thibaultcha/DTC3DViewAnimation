@@ -7,7 +7,6 @@
 //
 
 const CGFloat kAnimDuration = 0.2f;
-const CGFloat kScale = 0.8f;
 
 #import "DTCViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -31,31 +30,31 @@ const CGFloat kScale = 0.8f;
 {
     [super viewDidLoad];
     
-    // UIlabel
-    CGRect labelFrame = CGRectMake(0, 60.0f, 0, 0);
-    UILabel *label = [[UILabel alloc] init];
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor whiteColor];
-    label.text = @"This is a cool animation";
-    [label sizeToFit];
-    labelFrame.origin.x = self.view.center.x - label.frame.size.width / 2;
-    [label setFrame:labelFrame];
-    [label sizeToFit];
-    [self.view addSubview:label];
-    
     // Gesture
     _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                           action:@selector(onPanGesture:)];
     [self.view addGestureRecognizer:self.panGesture];
-    
-    self.view.backgroundColor = [UIColor grayColor];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self setAngleLabel:nil];
+    [self setMaxAngle:nil];
 }
+
+
+#pragma mark - Slider value changed
+
+
+- (IBAction)onAngleValueChanged:(id)sender
+{
+    self.angleLabel.text = [NSString stringWithFormat:@"%.0f°", ((UISlider*)sender).value];
+}
+
+
+#pragma mark - Pan gesture
+
 
 - (void)onPanGesture:(UIPanGestureRecognizer *)gesture
 {
@@ -65,13 +64,13 @@ const CGFloat kScale = 0.8f;
         [UIView animateWithDuration:kAnimDuration animations:^{
             // Old stuff to zoom out
             //self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, kScale, kScale);
-            TransformAnimation(position, self.view, 20.0f);
+            TransformAnimation(position, self.view, self.maxAngle.value);
         
         }];
     }
     else if ( UIGestureRecognizerStateChanged == gesture.state ) {
         
-        TransformAnimation(position, self.view, 20.0f);
+        TransformAnimation(position, self.view, self.maxAngle.value);
         
     }
     else if ( UIGestureRecognizerStateEnded == gesture.state ) {
@@ -96,12 +95,6 @@ void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^
     CGFloat maxX = view.window.frame.size.width - center.x;
     CGFloat maxY = view.window.frame.size.height - center.y;
     CGFloat angle = (sqrt(dx*dx + dy*dy) / sqrt(maxX*maxX + maxY*maxY)) * maxAngle;
-    
-#ifdef DEBUG
-    //NSLog(@"%f %f", xTransformation, yTransformation);
-    //NSLog(@"distance %f", sqrt(dx*dx + dy*dy));
-    //NSLog(@"angle %f", angle);
-#endif
     
     // Begin the transformation anim
     CATransform3D layerTransform = CATransform3DIdentity;
