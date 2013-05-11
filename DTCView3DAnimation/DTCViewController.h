@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @property (weak, nonatomic) IBOutlet UISlider *maxAngle;
 @property (weak, nonatomic) IBOutlet UILabel *angleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)onAngleValueChanged:(id)sender;
 - (void)onPanGesture:(UIPanGestureRecognizer *)gesture;
