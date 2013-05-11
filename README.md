@@ -2,7 +2,7 @@
 
 This animation "push" a view according to a point (x and y) and relative to it's center.
 
-[Video demo](http://cl.ly/323y3i0C3s2c)
+[Video demo](http://cl.ly/3y0o2z1v2U00)
 
 ![](screenshot1.png)
 
