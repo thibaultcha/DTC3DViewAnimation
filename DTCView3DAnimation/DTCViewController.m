@@ -60,18 +60,18 @@ const CGFloat kScale = 0.8f;
 - (void)onPanGesture:(UIPanGestureRecognizer *)gesture
 {
     CGPoint position = [gesture locationInView:self.view.window];
-    CGPoint center = self.view.window.center;
     
     if ( UIGestureRecognizerStateBegan == gesture.state ) {
         [UIView animateWithDuration:kAnimDuration animations:^{
-        
-            TransformAnimation(position, center, self.view);
+            // Old stuff to zoom out
+            //self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, kScale, kScale);
+            TransformAnimation(position, self.view, 20.0f);
         
         }];
     }
     else if ( UIGestureRecognizerStateChanged == gesture.state ) {
         
-        TransformAnimation(position, center, self.view);
+        TransformAnimation(position, self.view, 20.0f);
         
     }
     else if ( UIGestureRecognizerStateEnded == gesture.state ) {
@@ -84,24 +84,32 @@ const CGFloat kScale = 0.8f;
 }
 
 // Block declaration
-void (^TransformAnimation)(CGPoint position, CGPoint center, UIView *view) = ^(CGPoint position, CGPoint center, UIView *view)
+void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^(CGPoint position, UIView *view, CGFloat maxAngle)
 {
+    CGPoint center = view.center;
+    CGFloat dx = position.x - center.x;
+    CGFloat dy = position.y - center.y;
     // Get values for x and y between 1 and -1
-    CGFloat yTransformation = ((position.y - center.y) / view.window.frame.size.height) * 2;
-    CGFloat xTransformation = ((position.x - center.x) / view.window.frame.size.width) * 2;
+    CGFloat yTransformation = dx / view.window.frame.size.width;
+    CGFloat xTransformation = -dy / view.window.frame.size.height;
+    // Calculate the angle
+    CGFloat maxX = view.window.frame.size.width - center.x;
+    CGFloat maxY = view.window.frame.size.height - center.y;
+    CGFloat angle = (sqrt(dx*dx + dy*dy) / sqrt(maxX*maxX + maxY*maxY)) * maxAngle;
+    
 #ifdef DEBUG
-    NSLog(@"%f %f", xTransformation, yTransformation);
+    //NSLog(@"%f %f", xTransformation, yTransformation);
+    //NSLog(@"distance %f", sqrt(dx*dx + dy*dy));
+    //NSLog(@"angle %f", angle);
 #endif
-    // Old stuff to zoom out
-    //self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, kScale, kScale);
     
     // Begin the transformation anim
     CATransform3D layerTransform = CATransform3DIdentity;
-    layerTransform.m34 = 1.0f / -300;
+    layerTransform.m34 = 1.0f / -300; // perspective effect
     view.layer.transform = CATransform3DRotate(layerTransform,
-                                               10 * M_PI / 180.0f,
-                                               -yTransformation,
+                                               angle / (180.0f / M_PI),
                                                xTransformation,
+                                               yTransformation,
                                                0);
 };
 
