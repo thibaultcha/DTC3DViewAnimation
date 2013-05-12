@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		211577C3173ECA200095FCB6 /* ironman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 211577C2173ECA200095FCB6 /* ironman@2x.png */; };
-		21392349173EA33100AB90A0 /* DTCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21392348173EA33100AB90A0 /* DTCViewController.xib */; };
 		21563073173D3D5F0008EA45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21563072173D3D5F0008EA45 /* UIKit.framework */; };
 		21563075173D3D5F0008EA45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21563074173D3D5F0008EA45 /* Foundation.framework */; };
 		21563077173D3D5F0008EA45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21563076173D3D5F0008EA45 /* CoreGraphics.framework */; };
 		2156307D173D3D5F0008EA45 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2156307B173D3D5F0008EA45 /* InfoPlist.strings */; };
 		2156307F173D3D5F0008EA45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2156307E173D3D5F0008EA45 /* main.m */; };
-		21563083173D3D5F0008EA45 /* DTCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21563082173D3D5F0008EA45 /* DTCAppDelegate.m */; };
 		21563085173D3D5F0008EA45 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 21563084173D3D5F0008EA45 /* Default.png */; };
 		21563087173D3D5F0008EA45 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21563086173D3D5F0008EA45 /* Default@2x.png */; };
 		21563089173D3D5F0008EA45 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21563088173D3D5F0008EA45 /* Default-568h@2x.png */; };
 		21563090173D3D720008EA45 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156308F173D3D720008EA45 /* QuartzCore.framework */; };
-		21563093173D3DAC0008EA45 /* DTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21563092173D3DAC0008EA45 /* DTCViewController.m */; };
+		218276E3173FFD4D0086EB29 /* DTCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218276E2173FFD4D0086EB29 /* DTCAppDelegate.m */; };
+		218276E7173FFD540086EB29 /* DTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218276E5173FFD540086EB29 /* DTCViewController.m */; };
+		218276E8173FFD540086EB29 /* DTCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218276E6173FFD540086EB29 /* DTCViewController.xib */; };
+		218276EA173FFD610086EB29 /* ironman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 218276E9173FFD610086EB29 /* ironman@2x.png */; };
+		218276EC173FFD730086EB29 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 218276EB173FFD730086EB29 /* icon.png */; };
+		218276EE173FFD770086EB29 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 218276ED173FFD770086EB29 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		211577C2173ECA200095FCB6 /* ironman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ironman@2x.png"; sourceTree = "<group>"; };
-		21392348173EA33100AB90A0 /* DTCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTCViewController.xib; path = DTCView3DAnimation/DTCViewController.xib; sourceTree = "<group>"; };
 		2156306F173D3D5F0008EA45 /* DTCView3DAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DTCView3DAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21563072173D3D5F0008EA45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21563074173D3D5F0008EA45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -33,14 +33,18 @@
 		2156307C173D3D5F0008EA45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2156307E173D3D5F0008EA45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21563080173D3D5F0008EA45 /* DTCView3DAnimation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DTCView3DAnimation-Prefix.pch"; sourceTree = "<group>"; };
-		21563081173D3D5F0008EA45 /* DTCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTCAppDelegate.h; sourceTree = "<group>"; };
-		21563082173D3D5F0008EA45 /* DTCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTCAppDelegate.m; sourceTree = "<group>"; };
 		21563084173D3D5F0008EA45 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		21563086173D3D5F0008EA45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		21563088173D3D5F0008EA45 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2156308F173D3D720008EA45 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		21563091173D3DAC0008EA45 /* DTCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTCViewController.h; path = DTCView3DAnimation/DTCViewController.h; sourceTree = "<group>"; };
-		21563092173D3DAC0008EA45 /* DTCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTCViewController.m; path = DTCView3DAnimation/DTCViewController.m; sourceTree = "<group>"; };
+		218276E1173FFD4D0086EB29 /* DTCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTCAppDelegate.h; path = classes/DTCAppDelegate.h; sourceTree = "<group>"; };
+		218276E2173FFD4D0086EB29 /* DTCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTCAppDelegate.m; path = classes/DTCAppDelegate.m; sourceTree = "<group>"; };
+		218276E4173FFD540086EB29 /* DTCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTCViewController.h; path = DTCView3DAnimation/classes/DTCViewController.h; sourceTree = "<group>"; };
+		218276E5173FFD540086EB29 /* DTCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTCViewController.m; path = DTCView3DAnimation/classes/DTCViewController.m; sourceTree = "<group>"; };
+		218276E6173FFD540086EB29 /* DTCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTCViewController.xib; path = DTCView3DAnimation/classes/DTCViewController.xib; sourceTree = "<group>"; };
+		218276E9173FFD610086EB29 /* ironman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ironman@2x.png"; path = "images/ironman@2x.png"; sourceTree = "<group>"; };
+		218276EB173FFD730086EB29 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		218276ED173FFD770086EB29 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +93,8 @@
 		21563078173D3D5F0008EA45 /* DTCView3DAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				21563081173D3D5F0008EA45 /* DTCAppDelegate.h */,
-				21563082173D3D5F0008EA45 /* DTCAppDelegate.m */,
+				218276E1173FFD4D0086EB29 /* DTCAppDelegate.h */,
+				218276E2173FFD4D0086EB29 /* DTCAppDelegate.m */,
 				21563094173D3DB30008EA45 /* View Controller */,
 				21563079173D3D5F0008EA45 /* Supporting Files */,
 			);
@@ -100,7 +104,9 @@
 		21563079173D3D5F0008EA45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				211577C2173ECA200095FCB6 /* ironman@2x.png */,
+				218276ED173FFD770086EB29 /* icon@2x.png */,
+				218276EB173FFD730086EB29 /* icon.png */,
+				218276E9173FFD610086EB29 /* ironman@2x.png */,
 				2156307A173D3D5F0008EA45 /* DTCView3DAnimation-Info.plist */,
 				2156307B173D3D5F0008EA45 /* InfoPlist.strings */,
 				2156307E173D3D5F0008EA45 /* main.m */,
@@ -115,9 +121,9 @@
 		21563094173D3DB30008EA45 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				21563091173D3DAC0008EA45 /* DTCViewController.h */,
-				21563092173D3DAC0008EA45 /* DTCViewController.m */,
-				21392348173EA33100AB90A0 /* DTCViewController.xib */,
+				218276E4173FFD540086EB29 /* DTCViewController.h */,
+				218276E5173FFD540086EB29 /* DTCViewController.m */,
+				218276E6173FFD540086EB29 /* DTCViewController.xib */,
 			);
 			name = "View Controller";
 			path = ..;
@@ -179,8 +185,10 @@
 				21563085173D3D5F0008EA45 /* Default.png in Resources */,
 				21563087173D3D5F0008EA45 /* Default@2x.png in Resources */,
 				21563089173D3D5F0008EA45 /* Default-568h@2x.png in Resources */,
-				21392349173EA33100AB90A0 /* DTCViewController.xib in Resources */,
-				211577C3173ECA200095FCB6 /* ironman@2x.png in Resources */,
+				218276E8173FFD540086EB29 /* DTCViewController.xib in Resources */,
+				218276EA173FFD610086EB29 /* ironman@2x.png in Resources */,
+				218276EC173FFD730086EB29 /* icon.png in Resources */,
+				218276EE173FFD770086EB29 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,8 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2156307F173D3D5F0008EA45 /* main.m in Sources */,
-				21563083173D3D5F0008EA45 /* DTCAppDelegate.m in Sources */,
-				21563093173D3DAC0008EA45 /* DTCViewController.m in Sources */,
+				218276E3173FFD4D0086EB29 /* DTCAppDelegate.m in Sources */,
+				218276E7173FFD540086EB29 /* DTCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
