@@ -29,11 +29,6 @@ const CGFloat kAnimDuration = 0.2f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Gesture
-    _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                          action:@selector(onPanGesture:)];
-    [self.view addGestureRecognizer:self.panGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,36 +48,38 @@ const CGFloat kAnimDuration = 0.2f;
 }
 
 
-#pragma mark - Pan gesture
+#pragma mark - Touches
 
 
-- (void)onPanGesture:(UIPanGestureRecognizer *)gesture
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGPoint position = [gesture locationInView:self.view.window];
-    
-    if ( UIGestureRecognizerStateBegan == gesture.state ) {
-        [UIView animateWithDuration:kAnimDuration animations:^{
-            // Old stuff to zoom out
-            //self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, kScale, kScale);
-            TransformAnimation(position, self.view, self.maxAngle.value);
-        
-        }];
-    }
-    else if ( UIGestureRecognizerStateChanged == gesture.state ) {
-        
-        TransformAnimation(position, self.view, self.maxAngle.value);
-        
-    }
-    else if ( UIGestureRecognizerStateEnded == gesture.state ) {
-        [UIView animateWithDuration:kAnimDuration animations:^{
-            
-            self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0f, 1.0f);
-        
-        }];
-    }
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPosition = [touch locationInView:self.view.window];
+    [UIView animateWithDuration:kAnimDuration animations:^{
+        // Old stuff to zoom out
+        //self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, kScale, kScale);
+        TransformAnimation(touchPosition, self.view, self.maxAngle.value);
+    }];
 }
 
-// Block declaration
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPosition = [touch locationInView:self.view.window];
+    TransformAnimation(touchPosition, self.view, self.maxAngle.value);
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [UIView animateWithDuration:kAnimDuration animations:^{
+        self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0f, 1.0f);
+    }];
+}
+
+
+#pragma mark - Block Declaration
+
+
 void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^(CGPoint position, UIView *view, CGFloat maxAngle)
 {
     CGFloat dx = position.x - view.center.x;
@@ -104,7 +101,5 @@ void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^
                                                yTransformation,
                                                0);
 };
-
-
 
 @end
