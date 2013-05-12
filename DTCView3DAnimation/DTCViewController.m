@@ -29,10 +29,11 @@ const CGFloat kAnimDuration = 0.2f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Gesture
     _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                           action:@selector(onPanGesture:)];
+    
     [self.view addGestureRecognizer:self.panGesture];
 }
 
@@ -77,7 +78,7 @@ const CGFloat kAnimDuration = 0.2f;
         [UIView animateWithDuration:kAnimDuration animations:^{
             
             self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0f, 1.0f);
-        
+            
         }];
     }
 }
@@ -103,6 +104,11 @@ void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^
                                                xTransformation,
                                                yTransformation,
                                                0);
+    
+    for (UIView *subview in [view subviews]) {
+        //subview.layer.transform = CATransform3DTranslate(layerTransform, 0, 0, 50.0f);
+    }
+
 };
 
 
