@@ -35,7 +35,7 @@ void (^TransformAnimation)(CGPoint position, UIView *view, CGFloat maxAngle) = ^
 };
 ```
 
-Made with the help of [@Dimillian](https://github.com/Dimillian).
+Made with [@Dimillian](https://github.com/Dimillian).
 
 ## Licence
 ```
