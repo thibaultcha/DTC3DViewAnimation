@@ -2,11 +2,9 @@
 
 This animation "push" a view according to a point (x and y) and relative to it's center. The angle depends on the distance from the center of the screen and can be set to a given max.
 
-[Video demo](http://cl.ly/3y0o2z1v2U00)
+[Video demo](http://cl.ly/3y0o2z1v2U00) (Much more fluidity in real.)
 
 ![](screenshot1.png)
-
-Much more reactivity in real than in the video.
 
 ## How
 It's this block which does the trick:
